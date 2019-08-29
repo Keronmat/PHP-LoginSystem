@@ -18,35 +18,33 @@ $(document).on("submit", "form.js-register", function(event) {
       .show();
     return false;
   }
+
   // Assuming the code gets this far, we can start the ajax process
   _error.hide();
 
   $.ajax({
     type: "POST",
-    url: "/Login_Registration_Page/ajax/register.php",
+    url: "/ajax/register.php",
     data: dataObj,
     dataType: "json",
     async: true
   })
     .done(function ajaxDone(data) {
-      //what ever data is
-      console.log(data);
+      // Whatever data is
       if (data.redirect !== undefined) {
-        window.location == data.redirect;
+        window.location = data.redirect;
+      } else if (data.error !== undefined) {
+        _error.text(data.error).show();
       }
-
-      alert(data.name);
     })
     .fail(function ajaxFailed(e) {
-      //This failed
+      // This failed
       console.log(e);
     })
     .always(function ajaxAlwaysDoThis(data) {
-      //Always do
+      // Always do
       console.log(data);
     });
 
   return false;
-
-  console.log(data);
 });

@@ -6,7 +6,6 @@
 	require_once "inc/config.php"; 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="follow">
 
-    <title>Login and Registration Page</title>
+    <title>Login and Registration</title>
 
     <base href="/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css" />
@@ -24,18 +23,16 @@
   <body>
 
   	<div class="uk-section uk-container">
-  		
-      <?php echo "Hello World. Today date is: ";
-            echo date("Y m d");
-      ?>
-      <p>
-        <a href="/Login_Registration_Page/login.php">Login</a>
-        <a href="/Login_Registration_Page/register.php">Register</a>
-      </p>
+  		<?php 
+  			echo "Hello world. Today is: ";
+  			echo date("Y m d");
+  		?> 
+  		<p>
+  			<a href="/Login_Registration_Page/login.php">Login</a>
+  			<a href="/Login_Registration_Page/register.php">Register</a>
+  		</p>
   	</div>
-    <?php require_once "inc/footer.php"?>
-    
+
+  	<?php require_once "inc/footer.php"; ?> 
   </body>
 </html>
-
-

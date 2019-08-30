@@ -5,7 +5,9 @@
 	// Require the config
 	require_once "inc/config.php"; 
 
-ForceLogin();
+	Page::ForceLogin();
+
+  $User = new User($_SESSION['user_id']);
 	
 ?>
 
@@ -26,11 +28,9 @@ ForceLogin();
   <body>
 
   	<div class="uk-section uk-container">
-  		
-			
-            <h2>Welcome to the dashboard</h2>
-			 
-			<p>You are signed in as user:</p><?php echo $_SESSION['user_id']; ?>
+    <h2>Dashboard</h2>
+      <p>Hello <?php echo $User->email; ?>, you registered at <?php echo $User->reg_time; ?></p>
+      <p><a href="/logout.php">Logout</a></p>
   	</div>
     <?php require_once "inc/footer.php"; ?>
     

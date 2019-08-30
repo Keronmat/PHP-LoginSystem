@@ -5,6 +5,8 @@
 	// Require the config
 	require_once "inc/config.php"; 
 
+ForceLogin();
+	
 ?>
 
 <!DOCTYPE html>
@@ -24,11 +26,11 @@
   <body>
 
   	<div class="uk-section uk-container">
-  		<div class="uk-grid uk-child-width-1-3@s uk-child-width-1-1" uk-grid>
+  		
 			
             <h2>Welcome to the dashboard</h2>
 			 
-  		</div>
+			<p>You are signed in as user:</p><?php echo $_SESSION['user_id']; ?>
   	</div>
     <?php require_once "inc/footer.php"; ?>
     

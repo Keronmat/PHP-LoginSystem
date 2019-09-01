@@ -1,4 +1,4 @@
-$(document).on("submit", "form.js-register", function(event) {
+$(document).on("submit", "content", "form.js-register", function(event) {
   event.preventDefault();
 
   var _form = $(this);
@@ -49,7 +49,7 @@ $(document).on("submit", "form.js-register", function(event) {
   return false;
 });
 // login page
-$(document).on("submit", "form.js-login", function(event) {
+$(document).on("submit", ".content", "form.js-login", function(event) {
   event.preventDefault();
 
   var _form = $(this);

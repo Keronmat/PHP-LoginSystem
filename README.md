@@ -13,6 +13,12 @@
 - Go to localhost and add your clone folder as a Virtual host
 - left Click on the green wamp icon. Select Your virtual hosts and choose the virtual host you added
 
+### Features
+
+- Sign in.
+- Register.
+- Logout.
+
 ## Authors
 
-- [@keronmat](https://github.com/keronmat) - **Keron Matthews** Keron Matthews
+- [@keronmat](https://github.com/keronmat) - **Keron Matthews**

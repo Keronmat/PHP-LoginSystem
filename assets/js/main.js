@@ -99,3 +99,26 @@ $(document).on("submit", "form.js-login", function(event) {
 
   return false;
 });
+
+$(document).ready(function() {
+  function openMenu() {
+    const menuButton = $(".menu");
+    const navbar = $("#nav-bar");
+
+    menuButton.on("click", function() {
+      navbar.show();
+    });
+  }
+
+  function closeMenu() {
+    const navbar = $("#nav-bar");
+    const closeButton = $(".close-menu");
+
+    closeButton.on("click", function() {
+      navbar.hide();
+    });
+  }
+
+  openMenu();
+  closeMenu();
+});

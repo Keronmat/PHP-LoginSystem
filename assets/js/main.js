@@ -1,10 +1,11 @@
-$(document).on("submit", "content", "form.js-register", function(event) {
+$(document).on("submit", "form.js-register", function(event) {
   event.preventDefault();
 
   var _form = $(this);
-  var _error = $(".js-error", _form);
+  var _error = $(".js-error");
 
   var dataObj = {
+    full_name: $("input[type='text']", _form).val(),
     email: $("input[type='email']", _form).val(),
     password: $("input[type='password']", _form).val()
   };
@@ -49,11 +50,11 @@ $(document).on("submit", "content", "form.js-register", function(event) {
   return false;
 });
 // login page
-$(document).on("submit", ".content", "form.js-login", function(event) {
+$(document).on("submit", "form.js-login", function(event) {
   event.preventDefault();
 
   var _form = $(this);
-  var _error = $(".js-error", _form);
+  var _error = $(".js-error");
 
   var dataObj = {
     email: $("input[type='email']", _form).val(),
@@ -99,7 +100,7 @@ $(document).on("submit", ".content", "form.js-login", function(event) {
 
   return false;
 });
-
+//Page button
 $(document).ready(function() {
   function openMenu() {
     const menuButton = $(".menu");

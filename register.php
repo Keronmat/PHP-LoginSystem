@@ -1,60 +1,75 @@
-<?php 
+<?php
 
-	// Allow the config
-	define('__CONFIG__', true);
-	// Require the config
-	require_once "inc/config.php";
+// Allow the config
+define('__CONFIG__', true);
+// Require the config
+require_once "inc/config.php";
 
-	Page::ForceDashboard();
+Page::ForceDashboard();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="follow">
 
-    <title>Registration Page</title>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="follow">
 
-    <base href="/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css" />
-  </head>
+	<title>Registration Page</title>
 
-  <body>
+	<base href="/" />
+	<link rel="stylesheet" href="/assets/css/stylesRegister.css" />
+</head>
 
-  	<div class="uk-section uk-container">
-  		<div class="uk-grid uk-child-width-1-3@s uk-child-width-1-1" uk-grid>
-			<form class="uk-form-stacked js-register">
-				
-				<h2>Register</h2>
+<body>
+	<nav id="nav-bar">
+		<ul>
+			<li><a class="nav-link" href="/login.php">login</a></li>
+			<li><a class="nav-link" href="/register.php">Register</a></li>
+		</ul>
+		<a href="#" class="close-menu">
+			<span></span>
+		</a>
 
-			    <div class="uk-margin">
-			        <label class="uk-form-label" for="form-email">Email</label>
-			        <div class="uk-form-controls">
-			            <input class="uk-input" id="form-email" type="email" required='required' placeholder="email@email.com">
-			        </div>
-			    </div>
+	</nav>
+	<main id="main-content">
 
-			    <div class="uk-margin">
-			        <label class="uk-form-label" for="form-password">Passphrase</label>
-			        <div class="uk-form-controls">
-			            <input class="uk-input" id="form-password" type="password" required='required' placeholder="Your passphrase">
-			        </div>
-			    </div>
+		<header class="header">
+			<div class="menu">
+				<div class="menu-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<span>menu</span>
+			</div>
+		</header>
+		<div class="blurred-bg"></div>
+		<!-- Page Content -->
+		<section class="register-content">
+			<div class="js-error"></div>
+			<div class="container">
+				<form class="js-register">
 
-			    <div class="uk-margin uk-alert uk-alert-danger js-error" style='display: none;'></div>
+					<h1>Join us</h1>
+					<input name="name" id="form-name" type="text" required placeholder="Full Name">
 
-			    <div class="uk-margin">
-			        <button class="uk-button uk-button-default" type="submit">Register</button>
-			    </div>
+					<input name="email" id="form-email" type="email" required placeholder="E-mail">
 
-			</form>
-  		</div>
-  	</div>
+					<input name="pass" id="form-password" type="password" required placeholder="Password">
 
-  	<?php require_once "inc/footer.php"; ?> 
-  </body>
+					<button class="register-button" type="submit">Register</button>
+					<div id="container-inner">
+						<a id="login-button" href="/login.php">already a member ?</a>
+
+					</div>
+				</form>
+			</div>
+		</section><!-- Page Content Ends -->
+	</main>
+	<?php require_once "inc/footer.php"; ?>
+</body>
+
 </html>
-

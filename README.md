@@ -15,9 +15,10 @@
 
 ### Features
 
-- Sign in.
-- Register.
-- Logout.
+- Sign in Page
+- Register Page.
+- Logout capability.
+- Dashboard view.
 
 ## Authors
 

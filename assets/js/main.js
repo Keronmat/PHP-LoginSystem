@@ -5,7 +5,6 @@ $(document).on("submit", "form.js-register", function(event) {
   var _error = $(".js-error");
 
   var dataObj = {
-    full_name: $("input[type='text']", _form).val(),
     email: $("input[type='email']", _form).val(),
     password: $("input[type='password']", _form).val()
   };
@@ -37,6 +36,7 @@ $(document).on("submit", "form.js-register", function(event) {
       } else if (data.error !== undefined) {
         _error.text(data.error).show();
       }
+      console.log(data);
     })
     .fail(function ajaxFailed(e) {
       // This failed
@@ -46,7 +46,7 @@ $(document).on("submit", "form.js-register", function(event) {
       // Always do
       console.log(data);
     });
-
+  console.log(dataObj);
   return false;
 });
 // login page
@@ -100,26 +100,73 @@ $(document).on("submit", "form.js-login", function(event) {
 
   return false;
 });
-//Page button
+//Page UI functions
 $(document).ready(function() {
-  function openMenu() {
-    const menuButton = $(".menu");
-    const navbar = $("#nav-bar");
-
-    menuButton.on("click", function() {
-      navbar.show();
-    });
-  }
-
-  function closeMenu() {
-    const navbar = $("#nav-bar");
-    const closeButton = $(".close-menu");
-
-    closeButton.on("click", function() {
-      navbar.hide();
-    });
-  }
-
   openMenu();
   closeMenu();
+  openSideMenuBar();
+  setSidenavCloseListener();
+  toggleDropdown();
 });
+
+const sidenavEl = $(".sidenav");
+
+const GRID_NO_SCROLL_CLASS = "grid--noscroll";
+
+function openMenu() {
+  const menuButton = $(".menu");
+  const navbar = $("#nav-bar");
+
+  menuButton.on("click", function() {
+    navbar.show();
+  });
+}
+
+function closeMenu() {
+  const navbar = $("#nav-bar");
+  const closeButton = $(".close-menu");
+
+  closeButton.on("click", function() {
+    navbar.hide();
+  });
+}
+
+function toggleClass(el, className) {
+  if (el.hasClass(className)) {
+    el.removeClass(className);
+  } else {
+    el.addClass(className);
+  }
+}
+
+// Add and remove provided class names to open side menu
+function openSideMenuBar() {
+  const menuIconEl = $(".header__menu");
+  const sidenavEl = $(".sidenav");
+  const SIDENAV_ACTIVE_CLASS = "sidenav--active";
+
+  menuIconEl.on("click", function(e) {
+    toggleClass(sidenavEl, SIDENAV_ACTIVE_CLASS);
+  });
+}
+
+// close side nav
+function setSidenavCloseListener() {
+  const closeICon = $(".sidenav__brand-close");
+  const sidenavEl = $(".sidenav");
+  const SIDENAV_ACTIVE_CLASS = "sidenav--active";
+
+  closeICon.on("click", function(e) {
+    toggleClass(sidenavEl, SIDENAV_ACTIVE_CLASS);
+  });
+}
+// toggle Dropdown
+
+function toggleDropdown() {
+  const userAvatar = $(".header__avatar");
+
+  userAvatar.on("click", function(e) {
+    const dropdown = $(this).children(".dropdown");
+    toggleClass(dropdown, "dropdown--active");
+  });
+}

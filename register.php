@@ -20,7 +20,7 @@ Page::ForceDashboard();
 	<title>Registration Page</title>
 
 	<base href="/" />
-	<link rel="stylesheet" href="/assets/css/stylesRegister.css" />
+	<link  media="all" rel="stylesheet" type="text/css" href="/assets/css/stylesRegister.css" />
 </head>
 
 <body>
@@ -54,8 +54,6 @@ Page::ForceDashboard();
 				<form class="js-register">
 
 					<h1>Join us</h1>
-					<input name="name" id="form-name" type="text" required placeholder="Full Name">
-
 					<input name="email" id="form-email" type="email" required placeholder="E-mail">
 
 					<input name="pass" id="form-password" type="password" required placeholder="Password">
